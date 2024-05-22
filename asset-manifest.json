@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/venkata-chowdary/WeatherApp_React/static/css/main.32526c4d.css",
-    "main.js": "/venkata-chowdary/WeatherApp_React/static/js/main.8bde2966.js",
-    "static/media/sunset.jpg": "/venkata-chowdary/WeatherApp_React/static/media/sunset.ab19eb6fc568e5c0ff4d.jpg",
-    "index.html": "/venkata-chowdary/WeatherApp_React/index.html",
-    "main.32526c4d.css.map": "/venkata-chowdary/WeatherApp_React/static/css/main.32526c4d.css.map",
-    "main.8bde2966.js.map": "/venkata-chowdary/WeatherApp_React/static/js/main.8bde2966.js.map"
+    "main.css": "/WeatherApp_React/static/css/main.3d2792b1.css",
+    "main.js": "/WeatherApp_React/static/js/main.8bde2966.js",
+    "static/media/sunset.jpg": "/WeatherApp_React/static/media/sunset.ab19eb6fc568e5c0ff4d.jpg",
+    "index.html": "/WeatherApp_React/index.html",
+    "main.3d2792b1.css.map": "/WeatherApp_React/static/css/main.3d2792b1.css.map",
+    "main.8bde2966.js.map": "/WeatherApp_React/static/js/main.8bde2966.js.map"
   },
   "entrypoints": [
-    "static/css/main.32526c4d.css",
+    "static/css/main.3d2792b1.css",
     "static/js/main.8bde2966.js"
   ]
 }
