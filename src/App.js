@@ -9,6 +9,9 @@ function App() {
     const [location, setLocation] = useState('')
     const [weatherData, setWeatherData] = useState(null)
     const [errorMsg,setError]=useState(null)
+
+    const [positionData,setPosition]=useState({latitute:null,longitude:null})
+
     const [time,setTime]=useState(new Date())
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -18,13 +21,33 @@ function App() {
     useEffect(()=>{
         setInterval(()=>setTime(new Date()),1000)
     },[])
+
+
     useEffect(() => {
-        axios.post(`https://api.openweathermap.org/data/2.5/weather?q=Hyderabad&appid=${apiKey}&units=imperial`)
+
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((position)=>{
+                const {latitude,longitude}=position.coords
+                setPosition({longitude,latitude})
+                console.log(positionData)
+
+
+            },(err)=>console.log(err))
+        }
+        else{
+            console.log('fetch failed')
+        }
+
+
+        axios.post(`https://api.openweathermap.org/data/2.5/weather?lat=${positionData.latitute}&lon=${positionData.longitude}&appid=${apiKey}&units=imperial`)
             .then((response) => {
                 setWeatherData(response.data)
                 setError(null)
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                setError(err.response.data.message)
+                setWeatherData(null)
+            })
     }, [])
 
     function sendData(e) {
